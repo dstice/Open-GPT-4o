@@ -205,15 +205,14 @@ License of Linked repos as of 08/05/2026:
 MIT License
 
 Kye Gomez GPT4: https://github.com/kyegomez/GPT4
-nanochat: https://github.com/karpathy/nanochat
-autoresearch: https://github.com/karpathy/autoresearch
-LLM Wiki gist: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+Nanochat: https://github.com/karpathy/nanochat
+Autoresearch: https://github.com/karpathy/autoresearch
 LLM Wiki implementation: https://github.com/Pratiyush/llm-wiki
-tiktoken: https://github.com/openai/tiktoken
+Tiktoken: https://github.com/openai/tiktoken
 CLIP: https://github.com/openai/CLIP
 Whisper: https://github.com/openai/whisper
 Shap-E: https://github.com/openai/shap-e
 
 Apache 2.0 License
 
-realtime voice component: https://github.com/openai/realtime-voice-component
+Realtime voice component: https://github.com/openai/realtime-voice-component
