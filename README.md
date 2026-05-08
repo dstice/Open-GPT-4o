@@ -51,8 +51,6 @@ Open-GPT-4o =
 
 ## Key References
 
-- Open-GPT-4o repository: https://github.com/Project-4o/project-4o
-- Open-GPT-4o issues: https://github.com/Project-4o/project-4o/issues
 - Kye Gomez GPT4: https://github.com/kyegomez/GPT4
 - nanochat: https://github.com/karpathy/nanochat
 - autoresearch: https://github.com/karpathy/autoresearch
