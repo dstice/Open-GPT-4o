@@ -1,4 +1,4 @@
-# Suggested Roadmap for Open-GPT-4o
+# Roadmap for Open-GPT-4o
 
 This document proposes a serious technical roadmap for **Open-GPT-4o**: expanding from personality-focused tuning into a full open, omni-modal GPT-4o-class model family.
 
