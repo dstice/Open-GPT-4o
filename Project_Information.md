@@ -2,7 +2,7 @@
 
 ## Suggested Roadmap for Open-GPT-4o
 
-Open-GPT-4o is a proposed full community-open GPT-4o-class omni-modal model family. The aim is to move beyond personality-only fine-tuning and into a serious engineering roadmap for a full working model family: from an 8B dense model or A8B MoE model to a ~200B MoE model targeting GPT-4o-level benchmark equivalence.
+Open-GPT-4o is a proposed full community-open, source-available GPT-4o-class omni-modal model family. The aim is to move beyond personality-only fine-tuning and into a serious engineering roadmap for a full working model family: from an 8B dense model or A8B MoE model to a ~200B MoE model targeting GPT-4o-level benchmark equivalence.
 
 This is not intended to be a toy model, a demo model, or a research-only model. The goal is a full working Open-GPT-4o-style omni-modal architecture.
 
