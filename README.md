@@ -198,4 +198,22 @@ Keep Open-GPT-4o’s original personality and natural-conversation goals, while 
 
 This is a community project meant for creaton and for the community members and the general public as a whole. This project is hence licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must be open sourced and shared to all under the same license. 
 
-All other linked repos are governed under their respective licenses.
+All other linked repos are governed under their own respective licenses.
+
+License of Linked repos as of 08/05/2026:
+
+MIT License
+
+Kye Gomez GPT4: https://github.com/kyegomez/GPT4
+nanochat: https://github.com/karpathy/nanochat
+autoresearch: https://github.com/karpathy/autoresearch
+LLM Wiki gist: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+LLM Wiki implementation: https://github.com/Pratiyush/llm-wiki
+tiktoken: https://github.com/openai/tiktoken
+CLIP: https://github.com/openai/CLIP
+Whisper: https://github.com/openai/whisper
+Shap-E: https://github.com/openai/shap-e
+
+Apache 2.0 License
+
+realtime voice component: https://github.com/openai/realtime-voice-component
