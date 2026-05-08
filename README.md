@@ -38,28 +38,28 @@ Open-GPT-4o =
 
 | Component | Role in Open-GPT-4o |
 |---|---|
-| `tiktoken` | Text tokenizer and vocabulary |
+| `Tiktoken` | Text tokenizer and vocabulary |
 | CLIP | Vision-language encoding |
 | Whisper | ASR and audio encoding foundation |
-| realtime-voice-component | Real-time voice interface |
+| Realtime-voice-component | Real-time voice interface |
 | Shap-E | 3D generation pathway |
 | DALL-E VAE / diffusion / GLIDE / consistency decoder | Image generation and decoding |
-| kyegomez/GPT4 | Initial architecture scaffold |
-| nanochat | Minimal full-stack training inspiration |
-| autoresearch | Automated experimentation and optimization |
+| Kyegomez/GPT4 | Initial architecture scaffold |
+| Nanochat | Minimal full-stack training inspiration |
+| Autoresearch | Automated experimentation and optimization |
 | LLM Wiki | Project memory and post-training knowledge consolidation |
 
 ## Key References
 
 - Kye Gomez GPT4: https://github.com/kyegomez/GPT4
-- nanochat: https://github.com/karpathy/nanochat
-- autoresearch: https://github.com/karpathy/autoresearch
+- Nanochat: https://github.com/karpathy/nanochat
+- Autoresearch: https://github.com/karpathy/autoresearch
 - LLM Wiki gist: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 - LLM Wiki implementation: https://github.com/Pratiyush/llm-wiki
-- tiktoken: https://github.com/openai/tiktoken
+- Tiktoken: https://github.com/openai/tiktoken
 - CLIP: https://github.com/openai/CLIP
 - Whisper: https://github.com/openai/whisper
-- realtime voice component: https://github.com/openai/realtime-voice-component
+- Realtime voice component: https://github.com/openai/realtime-voice-component
 - Shap-E: https://github.com/openai/shap-e
 
 ## Tokenization Must Be Chosen First
