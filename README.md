@@ -196,7 +196,7 @@ Keep Open-GPT-4o’s original personality and natural-conversation goals, while 
 
 ## Licence
 
-This is a community project meant for creaton and for the community members and the general public as a whole. This project is hence licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must be open sourced and shared to all under the same license. 
+This is a community project meant for creaton and for the community members and the general public as a whole. This project is hence licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must be open sourced and shared to all under this same license. 
 
 All other linked repos are governed under their own respective licenses.
 
@@ -204,15 +204,15 @@ License of Linked repos as of 08/05/2026:
 
 MIT License
 
-Kye Gomez GPT4: https://github.com/kyegomez/GPT4
-Nanochat: https://github.com/karpathy/nanochat
-Autoresearch: https://github.com/karpathy/autoresearch
-LLM Wiki implementation: https://github.com/Pratiyush/llm-wiki
-Tiktoken: https://github.com/openai/tiktoken
-CLIP: https://github.com/openai/CLIP
-Whisper: https://github.com/openai/whisper
-Shap-E: https://github.com/openai/shap-e
+1. Kye Gomez GPT4: https://github.com/kyegomez/GPT4
+2. Nanochat: https://github.com/karpathy/nanochat
+3. Autoresearch: https://github.com/karpathy/autoresearch
+4. LLM Wiki implementation: https://github.com/Pratiyush/llm-wiki
+5. Tiktoken: https://github.com/openai/tiktoken
+6. CLIP: https://github.com/openai/CLIP
+7. Whisper: https://github.com/openai/whisper
+8. Shap-E: https://github.com/openai/shap-e
 
 Apache 2.0 License
 
-Realtime voice component: https://github.com/openai/realtime-voice-component
+9. Realtime voice component: https://github.com/openai/realtime-voice-component
