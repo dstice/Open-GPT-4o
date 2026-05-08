@@ -2,7 +2,7 @@
 
 ## Suggested Roadmap for Open-GPT-4o
 
-Open-GPT-4o is a proposed full open GPT-4o-class omni-modal model family. The aim is to move beyond personality-only fine-tuning and into a serious engineering roadmap for a full working model family: from an 8B dense model or A8B MoE model to a ~200B MoE model targeting GPT-4o-level benchmark equivalence.
+Open-GPT-4o is a proposed full community-open GPT-4o-class omni-modal model family. The aim is to move beyond personality-only fine-tuning and into a serious engineering roadmap for a full working model family: from an 8B dense model or A8B MoE model to a ~200B MoE model targeting GPT-4o-level benchmark equivalence.
 
 This is not intended to be a toy model, a demo model, or a research-only model. The goal is a full working Open-GPT-4o-style omni-modal architecture.
 
@@ -77,9 +77,9 @@ Different resources in this proposal have different roles. They should not all b
 
 ### Open-GPT-4o Repository and Discussion
 
-* Open-GPT-4o repository: Open-GPT-4o repository: [https://github.com/AonzOG/Open-GPT-4o](https://github.com/AonzOG/Open-GPT-4o)
+* Open-GPT-4o repository: [https://github.com/AonzOG/Open-GPT-4o](https://github.com/AonzOG/Open-GPT-4o)
 
-### GPT-like Scaffold and Training Inspiration
+### GPT-4-like Scaffold and Training Inspiration
 
 * Kye Gomez Open GPT-4-like architecture scaffold: [https://github.com/kyegomez/GPT4](https://github.com/kyegomez/GPT4)
 * Karpathy Nanochat: [https://github.com/karpathy/nanochat](https://github.com/karpathy/nanochat)
@@ -311,7 +311,7 @@ By the time this becomes a true Open-GPT-4o model, it will be descended from the
 
 ## Role of Nanochat
 
-nanochat should inspire the minimal full-stack training pipeline.
+Nanochat should inspire the minimal full-stack training pipeline.
 
 The goal is not to remain nano-sized forever. The goal is to use the nanochat philosophy:
 
