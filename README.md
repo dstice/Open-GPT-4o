@@ -47,7 +47,7 @@ Open-GPT-4o =
 | Kyegomez/GPT4 | Initial architecture scaffold |
 | Nanochat | Minimal full-stack training inspiration |
 | Autoresearch | Automated experimentation and optimization |
-| LLM Wiki | Project memory and post-training knowledge consolidation |
+| LLM Wiki | Project memory and post-training knowledge consolidation and creation of further dataset for autoresearch post-training/finetuning |
 
 ## Key References
 
