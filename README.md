@@ -193,3 +193,9 @@ Open-GPT-4o/
 ## Final Proposal
 
 Keep Open-GPT-4o’s original personality and natural-conversation goals, while adding a serious full-model engineering track that incrementally builds toward a full open omni-modal model family.
+
+## Licence
+
+This is a community project meant for creaton and for the community members and the general public as a whole. This project is hence licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must be open sourced and shared to all under the same license. 
+
+All other linked repos are governed under their respective licenses.
