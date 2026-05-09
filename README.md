@@ -96,7 +96,31 @@ Do **not** train on one tokenizer and swap later.
 <|wiki_update|>
 ```
 
-## Model Ladder
+## Proof of Concept Development and Experimentation Phase
+
+Phase 0: Proof-of-Concept and Scaffold Validation
+Stage A: Text-Generation Proof of Concept
+Stage B: AutoResearch-Guided GPT-2-Class Scaling
+Stage C: Vision-Language Proof of Concept
+Stage D: Pre-Omni Capability Bridges
+
+## Proof of Concept Development Principles
+
+```text
+Kye Gomez GPT4 scaffold
+↓
+Make it actually generate text
+↓
+Scale it through GPT-2-class checkpoints
+↓
+Add vision-language capability at small scale then scale thrugh checkpoints
+↓
+Add ASR/TTS/image-generation bridges at small scale vision language models then scale through checkpoints
+↓
+Then climb toward 4B, 8B–9B, and larger MoE models
+```
+
+## Model Development Ladder
 
 ### Stage 1: Open-GPT-4o-Mini-8B-Dense
 - 8B–9B dense decoder-only
