@@ -98,7 +98,7 @@ Do **not** train on one tokenizer and swap later.
 
 ## Proof of Concept Development and Experimentation Phase
 
-Phase 0: Proof-of-Concept and Scaffold Validation
+Phase 1: Proof-of-Concept and Scaffold Validation
 1. Stage A: Text-Generation Proof of Concept
 2. Stage B: AutoResearch-Guided GPT-2-Class Scaling
 3. Stage C: Vision-Language Proof of Concept
@@ -122,6 +122,7 @@ Then climb toward 4B, 8B–9B, and larger MoE models
 
 ## Model Development Ladder
 
+### Phase 2: 
 ### Stage 1: Open-GPT-4o-Mini-8B-Dense
 - 8B–9B dense decoder-only
 - 32K → 128K context
