@@ -99,10 +99,10 @@ Do **not** train on one tokenizer and swap later.
 ## Proof of Concept Development and Experimentation Phase
 
 Phase 0: Proof-of-Concept and Scaffold Validation
-Stage A: Text-Generation Proof of Concept
-Stage B: AutoResearch-Guided GPT-2-Class Scaling
-Stage C: Vision-Language Proof of Concept
-Stage D: Pre-Omni Capability Bridges
+1. Stage A: Text-Generation Proof of Concept
+2. Stage B: AutoResearch-Guided GPT-2-Class Scaling
+3. Stage C: Vision-Language Proof of Concept
+4. Stage D: Pre-Omni Capability Bridges
 
 ## Proof of Concept Development Principles
 
