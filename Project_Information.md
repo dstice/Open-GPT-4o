@@ -148,6 +148,23 @@ Models listed as matching or beating GPT-4o-mini-level benchmark surfaces:
 * Qwen3.5-122B-A10B: [https://huggingface.co/Qwen/Qwen3.5-122B-A10B](https://huggingface.co/Qwen/Qwen3.5-122B-A10B)
 * Qwen3.5-9B: [https://huggingface.co/Qwen/Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B)
 
+### Qwen3-VL-235B-A22B-Thinking as 200B-Class Vision-Language Evidence
+
+Qwen/Qwen3-VL-235B-A22B-Thinking should be treated as an important high-end reference model for the Open-GPT-4o roadmap.
+
+It is a 235B/236B-class MoE vision-language model with approximately 22B activated parameters. This places it near the estimated GPT-4o ~200B planning range referenced by Abacha et al. (2025), while remaining publicly inspectable as a frontier-scale vision-language model.
+
+The important lesson is not that Qwen3-VL-235B exactly equals GPT-4o but that a ~200B-class MoE vision-language model can now be treated as a realistic public reference point for:
+
+- multimodal reasoning;
+- OCR;
+- long-context vision-language work;
+- video understanding;
+- GUI/agentic visual tasks;
+- spatial reasoning;
+- high-end text and vision benchmark comparison;
+- eventual Open-GPT-4o-200B-class planning.
+
 ## Tokenisation Decision: GPT-4o `tiktoken` Must Be Chosen Before Training
 
 GPT-4o `tiktoken` / o200k-style tokenisation should be selected before pre-training and before AutoResearch begins changing training code.
