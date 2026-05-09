@@ -120,6 +120,8 @@ Add ASR/TTS/image-generation bridges at small scale vision language models then 
 Then climb toward 4B, 8B–9B, and larger MoE models
 ```
 
+Read more at: https://github.com/AonzOG/Open-GPT-4o/blob/main/Proof%20of%20Concept%20and%20Development%20of%20Experimental%20Models
+
 ## Model Development Ladder
 
 ### Phase 2: 
