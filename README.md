@@ -72,6 +72,9 @@ Reading Materials:
 - https://github.com/NROwind/OpenGPT-4o-Image
 - https://github.com/OmniMMI/OpenOmniNexus
 - https://github.com/kotoba-tech/Open-GPT-4o
+- https://github.com/openai/gpt-2
+- https://github.com/karpathy/minGPT
+- https://github.com/karpathy/nanoGPT
 
 ## Tokenization Must Be Chosen First
 
