@@ -75,6 +75,7 @@ Reading Materials:
 - https://github.com/openai/gpt-2
 - https://github.com/karpathy/minGPT
 - https://github.com/karpathy/nanoGPT
+- https://github.com/PromtEngineer/localGPT
 
 ## Tokenization Must Be Chosen First
 
