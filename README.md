@@ -66,6 +66,13 @@ Open-GPT-4o =
 - Realtime voice component: https://github.com/openai/realtime-voice-component
 - Shap-E: https://github.com/openai/shap-e
 
+Reading Materials:
+- https://github.com/raiyanyahya/how-to-train-your-gpt
+- https://github.com/gpt-omni/mini-omni2
+- https://github.com/NROwind/OpenGPT-4o-Image
+- https://github.com/OmniMMI/OpenOmniNexus
+- https://github.com/kotoba-tech/Open-GPT-4o
+
 ## Tokenization Must Be Chosen First
 
 Choose GPT-4o/o200k-style tokenization **before pre-training**, then add multimodal special tokens and resize embeddings/output heads.
