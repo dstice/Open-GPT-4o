@@ -1,6 +1,6 @@
 # Open-GPT-4o Roadmap and Technical Specification
 
-This document proposes a serious technical roadmap for **Open-GPT-4o**: expanding from personality-focused tuning into a community-open, source-available, omni-modal GPT-4o-class model family.
+This document proposes a serious technical roadmap for **Open-GPT-4o**: expanding from personality-focused tuning into a community-open, source-available, omni-modal GPT-4o-class model family. This projects builds from the Open-GPT-4-inspired scaffold developed by Kyegomez.
 
 ## Status
 
@@ -8,14 +8,93 @@ Planning and specification stage.
 
 ## Vision
 
-Open-GPT-4o currently emphasizes natural conversation, personality, roleplay, less rigid behavior, and efficiency in smaller models. This roadmap adds a second engineering track focused on building a complete model family:
+Open-GPT-4o development plan emphasises natural conversation, personality, roleplay, less rigid behavior, and efficiency in smaller models. This roadmap adds a second engineering track focused on building a complete model family:
 
 1. **Open-GPT-4o-Mini-8B-Dense**
 2. **Open-GPT-4o-Mini-A8B-MoE**
-3. **Open-GPT-4o-120B/A10B-class MoE**
-4. **Open-GPT-4o-200B-class MoE**
+3. **Open-GPT-4o-¬120B-¬A10B-class MoE**
+4. **Open-GPT-4o-¬200B--¬A20B-class MoE**
 
 Final target: a native omni-modal family capable of text, image, audio, voice, video-like frame reasoning, image generation, 3D generation, structured tool calls, and real-time interaction.
+
+## Mission
+
+Phase 0 focuses on converting Kye Gomez’s Open-GPT-4 inspired scaffold from a conceptual GPT-4-like scaffold into a reproducible, trainable, GPT-2-classification checkpoints, text-generation, then vision-language encoding, and audio and image-generation capabilities development pipeline.
+
+This proof-of-concept track will validate the scaffold through the following experimental model ladder:
+
+1. **Open-GPT-4-Text-124M Dense**  
+2. **Open-GPT-4-Text-350M Dense**  
+3. **Open-GPT-4-Text-774M Dense**  
+4. **Open-GPT-4-Text-1.5B Dense**  
+4. **Open-GPT-4-VL-450M Dense**  
+6. **Open-GPT-4-VL-0.8B Dense**  
+7. **Open-GPT-4-VL-1.6B Dense**  
+8. **Open-GPT-4-Omni-Bridge-0.8B**  
+9. **Open-GPT-4-Omni-Bridge-1.6B to 2B Dense**  
+10. **Open-GPT-4-Omni-Bridge-2B to 4B Dense/MOE**  
+11. **Open-GPT-4-Mini-8B to 9B Dense/MOE**  
+
+Final target: a validated pre-development scaffold capable of real tokenisation, dataset loading, autoregressive next-token prediction, stable loss reduction, checkpoint saving and loading, text generation, evaluation, AutoResearch-controlled experimentation, vision-language training, and staged omni-modal bridge development.
+
+## Goals
+
+Phase 0 is divided into four major development goals. Each goal represents a major proof stage before Open-GPT-4o climbs into larger dense, MoE, or native omni-modal training.
+
+Phase 0A: Open-GPT-4 Text-Generation Proof of Concept   
+Phase 0B: AutoResearch-Guided GPT-2-Classification Checkpoint Scaling  
+Phase 0C: Vision-Language Encoding Proof of Concept  
+Phase 0D: Pre-Omni Capability Bridges  
+
+Final goal: prove the scaffold before scaling it.
+
+## Objectives
+
+### Phase 0A: Open-GPT-4 Text-Generation Proof of Concept  
+
+Convert the GPT4 scaffold into a functional GPT-2-like text-generation model.
+
+Target text-only model ladder:
+
+Open-GPT-4-Text-124M  
+Open-GPT-4-Text-350M  
+Open-GPT-4-Text-774M  
+Open-GPT-4-Text-1.5B  
+
+This stage must validate real tokenisation, real dataset loading, autoregressive next-token prediction, stable loss reduction, checkpoint saving and loading, text generation, and evaluation.
+
+### Phase 0B: AutoResearch-Guided GPT-2-Classification Checkpoint Scaling
+
+Introduce AutoResearch after the 124M text-generation proof model is working.
+
+AutoResearch should optimise depth, width, attention heads, feed-forward ratio, learning rate, warm-up schedule, batch size, sequence length, dataset mixture, optimiser settings, checkpoint frequency, validation metrics, sampling settings, and regression detection.
+
+AutoResearch must operate through controlled experiment templates, reviewable diffs, reproducible configuration files, and human-auditable results. It should not randomly rewrite the model.
+
+### Phase 0C: Vision-Language Encoding Proof of Concept
+
+Train Open-GPT-4o-VL models after text generation has been proven.
+
+Target vision-language model ladder:
+
+Open-GPT-4-VL-450M  
+Open-GPT-4-VL-0.8B  
+Open-GPT-4-VL-1.6B  
+
+This stage should include image-caption pairs, visual question answering, OCR, document understanding, chart understanding, table understanding, screenshots and GUI tasks, object localisation where possible, multi-image reasoning, and visual instruction following.
+
+### Phase 0D: Pre-Omni Capability Bridges
+
+Begin staged omni-modal bridge development after the text-only and vision-language ladders are proven.
+
+Target omni bridge ladder:
+
+Open-GPT-4-Omni-Bridge-0.8B  
+Open-GPT-4-Omni-Bridge-1.6B–2B  
+Open-GPT-4-Omni-Bridge-4B  
+Open-GPT-4-Mini-8B–9B  
+
+This stage should add ASR, TTS, real-time voice interface, image-generation bridge, 3D-generation bridge, tool-use and function-calling, memory/wiki update tokens, and native multimodal routing preparation.
 
 ## Core Architectural Principle
 
@@ -146,13 +225,17 @@ Read more at: https://github.com/AonzOG/Open-GPT-4o/blob/main/Proof_of_Concept_a
 - 64–128 experts, top-k routing, shared expert
 - modality-aware routing across text/vision/audio/tools
 
-### Stage 3: Open-GPT-4o-120B/A10B-class MoE
+### Stage 3: Open-GPT-4o-¬120B-¬A10B-class MoE
 - 100B–130B total, 10B–15B active
 - stronger multimodal routing and high-end benchmark target
 
-### Stage 4: Open-GPT-4o-200B-class MoE
+### Stage 4: Open-GPT-4o-¬200B-¬A20B-class MoE
 - 180B–220B total (~200B)
 - flagship teacher model for distillation/pruning to smaller variants
+
+### Stage 4: Open-GPT-4o-¬400B-¬A20B-class MoE
+- 360B-440B total (¬400B)
+- Next step in development of frontier-level community-open, source-available Open-GPT-4o class model for community personal use and research purposes.
 
 ## Training Strategy
 
@@ -217,6 +300,33 @@ Open-GPT-4o/
 10. Convert/scale to A8B MoE, then 120B/A10B, then ~200B.
 11. Distill/prune to deployable variants.
 
+## Class Inspirations:
+
+The following models form the inspiration for the proposed model developmental ladder arranged according to model weight size from descending to ascending order:
+
+**LiquidAI/LFM2.5-350M**: https://huggingface.co/LiquidAI/LFM2.5-350M
+**LiquidAI/LFM2.5-VL-450M**: https://huggingface.co/LiquidAI/LFM2.5-VL-450M
+**Qwen/Qwen3.5-0.8B**: https://huggingface.co/Qwen/Qwen3.5-0.8B
+**openbmb/MiniCPM-V-4.6**: https://huggingface.co/openbmb/MiniCPM-V-4.6
+**openbmb/MiniCPM-V-4.6-Thinking**: https://huggingface.co/openbmb/MiniCPM-V-4.6-Thinking
+**LiquidAI/LFM2.5-1.2B-Thinking**: https://huggingface.co/LiquidAI/LFM2.5-1.2B-Thinking
+**LiquidAI/LFM2.5-1.2B-Instruct**: https://huggingface.co/LiquidAI/LFM2.5-1.2B-Instruct
+**LiquidAI/LFM2.5-VL-1.6B**: https://huggingface.co/LiquidAI/LFM2.5-VL-1.6B
+**Qwen/Qwen3.5-2B**: https://huggingface.co/Qwen/Qwen3.5-2B
+**Qwen/Qwen3.5-4B**: https://huggingface.co/Qwen/Qwen3.5-4B 
+**LiquidAI/LFM2-VL-3B**: https://huggingface.co/LiquidAI/LFM2-VL-3B
+**Qwen/Qwen3-Omni-30B-A3B-Thinking**: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Thinking
+**Qwen/Qwen3-Omni-30B-A3B-Instruct**: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct
+**Qwen/Qwen3-VL-8B-Thinking**: https://huggingface.co/Qwen/Qwen3-VL-8B-Thinking
+**Qwen/Qwen3-VL-8B-Instruct**: https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct
+**Qwen/Qwen3.5-9B**: https://huggingface.co/Qwen/Qwen3.5-9B 
+**openbmb/MiniCPM-o-4_5 9B**: https://huggingface.co/openbmb/MiniCPM-o-4_5
+**Qwen/Qwen3.5-122B-A10B**: https://huggingface.co/Qwen/Qwen3.5-122B-A10B
+**Qwen/Qwen3-VL-235B-A22B-Thinking**: https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking
+**Qwen/Qwen3-VL-235B-A22B-Instruct**: https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct
+**Qwen/Qwen3.5-397B-A17B** (Actually comparable to or beats OpenAI/GPT-4o in majority of it's textual-language and vision-language benchmarks): https://huggingface.co/Qwen/Qwen3.5-397B-A17B
+**Qwen/Qwen3.6-27B** (For a relatively small Vision Language Model,is comparable to or beats OpenAI/GPT-4o in majority of it's textual-language and vision-language benchmarks): https://huggingface.co/Qwen/Qwen3.6-27B 
+
 ## Open Questions
 
 1. Separate `open-gpt-4o-core` branch?
@@ -236,7 +346,7 @@ Keep Open-GPT-4o’s original personality and natural-conversation goals, while 
 
 ## Licence
 
-This is a community project meant for creation and for the community members and the general public as a whole. This project is hence licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must remain publicly shared under this same licence. 
+This is a community project meant for creation and for the community members and the general public as a whole. This project is hence licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International**. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must remain publicly shared under this same licence. All resulting AI products and technologies resulting from this project via research must be made publically available under this same license.
 
 All other linked repos are governed under their own respective licenses.
 
