@@ -12,8 +12,8 @@ Open-GPT-4o development plan emphasises natural conversation, personality, rolep
 
 1. **Open-GPT-4o-Mini-8B-Dense**
 2. **Open-GPT-4o-Mini-A8B-MoE**
-3. **Open-GPT-4o-¬120B-¬A10B-class MoE**
-4. **Open-GPT-4o-¬200B--¬A20B-class MoE**
+3. **Open-GPT-4o-~120B-~A10B-class MoE**
+4. **Open-GPT-4o-~200B--~A20B-class MoE**
 
 Final target: a native omni-modal family capable of text, image, audio, voice, video-like frame reasoning, image generation, 3D generation, structured tool calls, and real-time interaction.
 
@@ -225,16 +225,16 @@ Read more at: https://github.com/AonzOG/Open-GPT-4o/blob/main/Proof_of_Concept_a
 - 64–128 experts, top-k routing, shared expert
 - modality-aware routing across text/vision/audio/tools
 
-### Stage 3: Open-GPT-4o-¬120B-¬A10B-class MoE
+### Stage 3: Open-GPT-4o-~120B-~A10B-class MoE
 - 100B–130B total, 10B–15B active
 - stronger multimodal routing and high-end benchmark target
 
-### Stage 4: Open-GPT-4o-¬200B-¬A20B-class MoE
+### Stage 4: Open-GPT-4o-~200B-~A20B-class MoE
 - 180B–220B total (~200B)
 - flagship teacher model for distillation/pruning to smaller variants
 
-### Stage 4: Open-GPT-4o-¬400B-¬A20B-class MoE
-- 360B-440B total (¬400B)
+### Stage 4: Open-GPT-4o-~400B-~A20B-class MoE
+- 360B-440B total (~400B)
 - Next step in development of frontier-level community-open, source-available Open-GPT-4o class model for community personal use and research purposes.
 
 ## Training Strategy
