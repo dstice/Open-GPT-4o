@@ -19,7 +19,7 @@ Final target: a native omni-modal family capable of text, image, audio, voice, v
 
 ## Mission
 
-Phase 0 focuses on converting Kye Gomez’s Open-GPT-4 inspired scaffold from a conceptual GPT-4-like scaffold into a reproducible, trainable, GPT-2-classification checkpoints, text-generation, then vision-language encoding, and audio and image-generation capabilities development pipeline.
+Proof of concept development plan focuses on converting Kye Gomez’s Open-GPT-4 inspired scaffold from a concept scaffold into a reproducible, trainable, GPT-4 inspired models developed along the GPT-2-classification checkpoints, with initial text-generation only capabilities, then vision-language encoding, and audio and image-generation capabilities development along the proposed pipeline.
 
 This proof-of-concept track will validate the scaffold through the following experimental model ladder:
 
@@ -81,7 +81,7 @@ Open-GPT-4-VL-450M
 Open-GPT-4-VL-0.8B  
 Open-GPT-4-VL-1.6B  
 
-This stage should include image-caption pairs, visual question answering, OCR, document understanding, chart understanding, table understanding, screenshots and GUI tasks, object localisation where possible, multi-image reasoning, and visual instruction following.
+This stage should include image-caption pairs, visual question answering, OCR, document understanding, chart understanding, table understanding, screenshots and GUI tasks, object localisation where possible, multi-image reasoning, and visual instruction following. **LiquidAI's LFM2.5-VL-450M** is the majoor inspiration for the development of the Open-GPT-4 text only model into a vision language mode. Although this project proposes encoding OpenAI's own MIT licensed open source **CLIP** encoded on the **Open-GPT-4 inspired language model backbone**, LFM2.5-VL-450M is a Lanaguage Model based on the  **LFM2.5-350M backbone** with the **SigLIP2 NaFlex shape‑optimized 86M vision encoder**. This real life implementation demonstrates possibilties on the development of a vision language capable Open-GPT-4 inspired model.
 
 ### Phase 0D: Pre-Omni Capability Bridges
 
