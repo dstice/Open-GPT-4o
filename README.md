@@ -300,6 +300,11 @@ Open-GPT-4o/
 10. Convert/scale to A8B MoE, then 120B/A10B, then ~200B.
 11. Distill/prune to deployable variants.
 
+## Action Plan: How can I contribute into this project?
+
+1. Start by collecting links to all publicially available GPT-4o generated output data set and sharing the links to these dataset in the following project link: https://github.com/AonzOG/Open-GPT-4o/issues
+2. Compile your chats with GPT-4o (recommend annomyse by changing any personal/private real life names/details). 
+
 ## Class Inspirations:
 
 The following models form the inspiration for the proposed model developmental ladder arranged according to model weight size from descending to ascending order:
