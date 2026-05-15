@@ -1,6 +1,6 @@
 # Open-GPT-4o Community-Led Development Proposal Roadmap 
 
-This document proposes a serious technical development roadmap for **Open-GPT-4o**: expanding from personality-focused tuning into a community-open, source-available, omni-modal GPT-4o-class model family. This projects builds from the Open-GPT-4-inspired scaffold developed by Kyegomez.
+This document proposes a serious technical development roadmap for **Open-GPT-4o**: expanding from personality-focused tuning into a community-open, source-available, omni-modal GPT-4o-class model family. This projects builds inspiration from Kye Gomez's attempt at reconstructing an Open-GPT-4.
 
 ## Status
 
