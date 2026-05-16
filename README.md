@@ -1,6 +1,6 @@
 # Open-GPT-4o Community-Led Development Proposal Roadmap 
 
-This document proposes a serious technical development roadmap for **Open-GPT-4o**: expanding from personality-focused tuning into a community-open, source-available, omni-modal GPT-4o-class model family. This projects builds inspiration from Kye Gomez's attempt at reconstructing an Open-GPT-4.
+This document proposes a serious technical development roadmap for **Open-GPT-omni**: expanding from personality-focused tuning into a community-open, source-available, omni-modal GPT-4o-class model family. This projects builds inspiration from Kye Gomez's attempt at reconstructing an Open-GPT-4.
 
 ## Status
 
@@ -8,13 +8,13 @@ Planning and specification stage.
 
 ## Vision
 
-Open-GPT-4o development plan emphasises natural conversation, personality, roleplay, less rigid behavior, and efficiency in smaller models. This roadmap adds a second engineering track focused on building a complete model family:
+Open-GPT-omni development plan emphasises natural conversation, personality, roleplay, less rigid behavior, and efficiency in smaller models. This roadmap adds a second engineering track focused on building a complete model family:
 
-1. **Open-GPT-4o-Mini-8B-Dense**
-2. **Open-GPT-4o-Mini-A8B-MoE**
-3. **Open-GPT-4o-~120B-~A10B-class MoE**
-4. **Open-GPT-4o-~200B--~A20B-class MoE**
-5. **Open-GPT-4o-~400B-~A20B-class MoE**
+1. **Open-GPT-omni-Mini-8B-Dense**
+2. **Open-GPT-omni-Mini-A8B-MoE**
+3. **Open-GPT-omni-~120B-~A10B-class MoE**
+4. **Open-GPT-omni-~200B--~A20B-class MoE**
+5. **Open-GPT-omni-~400B-~A20B-class MoE**
 
 Final target: a native omni-modal family capable of text, image, audio, voice, video-like frame reasoning, image generation, 3D generation, structured tool calls, and real-time interaction.
 
@@ -24,23 +24,23 @@ Proof of concept development plan focuses on converting Kye Gomez’s Open-GPT-4
 
 This proof-of-concept track will validate the scaffold through the following experimental model ladder:
 
-1. **Open-GPT-4-Text-124M Dense**  
-2. **Open-GPT-4-Text-350M Dense**  
-3. **Open-GPT-4-Text-774M Dense**  
-4. **Open-GPT-4-Text-1.5B Dense**  
-4. **Open-GPT-4-VL-450M Dense**  
-6. **Open-GPT-4-VL-0.8B Dense**  
-7. **Open-GPT-4-VL-1.6B Dense**  
-8. **Open-GPT-4-Omni-Bridge-0.8B**  
-9. **Open-GPT-4-Omni-Bridge-1.6B to 2B Dense**  
-10. **Open-GPT-4-Omni-Bridge-2B to 4B Dense/MOE**  
-11. **Open-GPT-4-Mini-8B to 9B Dense/MOE**  
+1. **Open-GPT-oss-Text-124M Dense**  
+2. **Open-GPT-oss-Text-350M Dense**  
+3. **Open-GPT-oss-Text-774M Dense**  
+4. **Open-GPT-oss-Text-1.5B Dense**  
+4. **Open-GPT-oss-VL-450M Dense**  
+6. **Open-GPT-oss-VL-0.8B Dense**  
+7. **Open-GPT-oss-VL-1.6B Dense**  
+8. **Open-GPT-Omni-Bridge-0.8B**  
+9. **Open-GPT-Omni-Bridge-1.6B to 2B Dense**  
+10. **Open-GPT-Omni-Bridge-2B to 4B Dense/MOE**  
+11. **Open-GPT-Omni-Mini-8B to 9B Dense/MOE**  
 
 Final target: a validated pre-development scaffold capable of real tokenisation, dataset loading, autoregressive next-token prediction, stable loss reduction, checkpoint saving and loading, text generation, evaluation, AutoResearch-controlled experimentation, vision-language training, and staged omni-modal bridge development.
 
 ## Goals
 
-Phase 0 is divided into four major development goals. Each goal represents a major proof stage before Open-GPT-4o climbs into larger dense, MoE, or native omni-modal training.
+Phase 0 is divided into four major development goals. Each goal represents a major proof stage before Open-GPT-omni climbs into larger dense, MoE, or native omni-modal training.
 
 Phase 0A: Open-GPT-4 Text-Generation Proof of Concept   
 Phase 0B: AutoResearch-Guided GPT-2-Classification Checkpoint Scaling  
@@ -51,16 +51,16 @@ Final goal: prove the scaffold before scaling it.
 
 ## Objectives
 
-### Phase 0A: Open-GPT-4 Text-Generation Proof of Concept  
+### Phase 0A: Open-GPT-oss Text-Generation Proof of Concept  
 
-Convert the GPT4 scaffold into a functional GPT-2-like text-generation model.
+Convert Kyegome'z reconstructed Open-GPT-4 scaffold into a functional GPT-2-like text-generation model.
 
 Target text-only model ladder:
 
-Open-GPT-4-Text-124M  
-Open-GPT-4-Text-350M  
-Open-GPT-4-Text-774M  
-Open-GPT-4-Text-1.5B  
+Open-GPT-oss-Text-124M  
+Open-GPT-oss-Text-350M  
+Open-GPT-oss-Text-774M  
+Open-GPT-oss-Text-1.5B  
 
 This stage must validate real tokenisation, real dataset loading, autoregressive next-token prediction, stable loss reduction, checkpoint saving and loading, text generation, and evaluation.
 
@@ -78,9 +78,9 @@ Train Open-GPT-4o-VL models after text generation has been proven.
 
 Target vision-language model ladder:
 
-Open-GPT-4-VL-450M  
-Open-GPT-4-VL-0.8B  
-Open-GPT-4-VL-1.6B  
+Open-GPT-oss-VL-450M  
+Open-GPT-oss-VL-0.8B  
+Open-GPT-oss-VL-1.6B  
 
 This stage should include image-caption pairs, visual question answering, OCR, document understanding, chart understanding, table understanding, screenshots and GUI tasks, object localisation where possible, multi-image reasoning, and visual instruction following. **LiquidAI's LFM2.5-VL-450M** is the majoor inspiration for the development of the Open-GPT-4 text only model into a vision language mode. Although this project proposes encoding OpenAI's own MIT licensed open source **CLIP** encoded on the **Open-GPT-4 inspired language model backbone**, LFM2.5-VL-450M is a Lanaguage Model based on the  **LFM2.5-350M backbone** with the **SigLIP2 NaFlex shape‑optimized 86M vision encoder**. This real life implementation demonstrates possibilties on the development of a vision language capable Open-GPT-4 inspired model.
 
@@ -90,10 +90,10 @@ Begin staged omni-modal bridge development after the text-only and vision-langua
 
 Target omni bridge ladder:
 
-Open-GPT-4-Omni-Bridge-0.8B  
-Open-GPT-4-Omni-Bridge-1.6B–2B  
-Open-GPT-4-Omni-Bridge-4B  
-Open-GPT-4-Mini-8B–9B  
+Open-GPT-Omni-Bridge-0.8B  
+Open-GPT-Omni-Bridge-1.6B–2B  
+Open-GPT-Omni-Bridge-4B  
+Open-GPT-Omni-Mini-8B–9B  
 
 This stage should add ASR, TTS, real-time voice interface, image-generation bridge, 3D-generation bridge, tool-use and function-calling, memory/wiki update tokens, and native multimodal routing preparation.
 
@@ -120,7 +120,7 @@ Open-GPT-4o =
 
 ## Component Roles
 
-| Component | Role in Open-GPT-4o |
+| Component | Role in Open-GPT-omni |
 |---|---|
 | `Tiktoken` | Text tokenizer and vocabulary |
 | CLIP | Vision-language encoding |
