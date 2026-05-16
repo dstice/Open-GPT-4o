@@ -285,6 +285,9 @@ For this project, the comparison supports the following direction:
 18. Exploding Topics. "Number of Parameters in GPT-4."  
     https://explodingtopics.com/blog/gpt-parameters
 
+18. MEDEC: A Benchmark for Medical Error Detection and Correction in Clinical Notes
+    https://arxiv.org/html/2412.19260v1
+
 ### Design Implications for Open-GPT-4o
 
 The public evidence suggests that the most practical open development path is not to attempt a direct clone of GPT-4o, whose internal architecture and parameter count remain undisclosed, but to build a staged open model family using disclosed and reproducible components.
