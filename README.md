@@ -334,6 +334,32 @@ Phase 1: Proof-of-Concept and Scaffold Validation
 3. Stage C: Vision-Language Proof of Concept
 4. Stage D: Pre-Omni Capability Bridges
 
+## Proof-of-Concept Development Strategy
+**Parallel Proof-of-Concept Development Pipeline**
+
+The project will follow a dual-backbone proof-of-concept strategy. The dense GPT-2-class pathway proves the core training, vision-language, and omni-bridge pipeline with minimal architectural complexity. In parallel, a GPT-OSS-derived miniature Mixture-of-Experts (MoE) pathway proves the future scalable architecture while avoiding premature multimodal complexity.
+
+| Phase | Shared Infrastructure | Track A: Dense GPT-2-Class Pipeline | Track B: GPT-OSS-Derived MoE Pipeline | Exit Criteria |
+|---|---|---|---|---|
+| Phase 0A | Build common repository structure, configuration system, tokenizer interface, dataset loader, training loop, checkpointing, logging, evaluation harness, and inference script. | Uses the shared infrastructure as the first supported backbone. | Uses the same shared infrastructure, but MoE-specific modules may remain inactive at this stage. | A minimal text model can train, save, reload, generate text, and show decreasing loss on a small dataset. |
+| Phase 0B | Standardise experiment tracking, model cards, dataset cards, reproducibility notes, and benchmark reporting. | Train `Open-GPT-4o-Dense-124M` from scratch as the first clean text baseline. Later scale to 350M, 774M, and 1.5B if resources allow. | Design `Open-GPT-4o-MoE-Nano` as a scaled-down architectural analogue of GPT-OSS-style MoE models. Keep it text-only. | Dense 124M model reaches a stable GPT-2-small-class proof-of-concept loss curve and can generate coherent short text. |
+| Phase 0C | Add modular backbone abstraction so dense and MoE models can share tokenisation, training, evaluation, and inference tooling. | Improve dense text training quality through better datasets, learning-rate schedules, checkpoint averaging, and evaluation. | Train the first tiny MoE text model with router, expert layers, load-balancing loss, and active/total parameter reporting. | Dense and MoE text models can both be trained through the same pipeline and compared using the same evaluation scripts. |
+| Phase 0D | Add vision-language data interface, image preprocessing, vision encoder support, multimodal batching, and multimodal evaluation tasks. | Build dense vision-language model by attaching a CLIP/SigLIP-style vision encoder and projector/adapters to the dense GPT-2-class decoder. | Do not begin MoE vision-language training yet. Use this phase to study how visual tokens may interact with expert routing. | Dense VL model can perform basic captioning, visual question answering, OCR-style tasks, and image-grounded chat at small scale. |
+| Phase 0E | Add multimodal benchmark suite covering captioning, VQA, OCR, screenshots, charts, documents, and simple spatial reasoning. | Improve dense VL model through instruction tuning and multimodal alignment. | Begin MoE-VL only after dense VL is stable. Add router-aware visual-token adaptation rather than relying only on projector training. | Dense VL is reproducible, and the first MoE-VL experiments show visual tokens can pass through routing without collapse. |
+| Phase 0F | Add bridge interfaces for speech-to-text, text-to-speech, image generation, tool calls, and external specialist models. | Build dense omni bridge using ASR, TTS, image generation, and tool-use modules around the dense VL model. | Keep MoE omni bridge experimental until MoE-VL routing is stable. Start with text, vision, and tool-use before real-time voice. | Dense omni bridge can accept text, image, and audio inputs through external modules and produce coordinated multimodal responses. |
+| Phase 0G | Add unified demo interface, API endpoint, safety/evaluation logs, latency measurements, and release packaging. | Release dense text, dense VL, and dense omni-bridge checkpoints as the first public proof-of-concept family. | Release MoE text checkpoint and, if stable, an experimental MoE-VL checkpoint. | Public release includes checkpoints, configs, training logs, evaluation results, demo scripts, and clear known limitations. |
+| Phase 1 | Prepare scaling rules, compute estimates, dataset governance, contributor workflow, and distributed training plan. | Dense pathway remains the reliability baseline for debugging and regression testing. | MoE pathway becomes the preferred long-term scaling architecture once text and VL stability are proven. | Project graduates from proof-of-concept to scalable open multimodal model development. |
+
+### Development Doctrine
+
+Dense GPT-2 proves the pipeline.  
+GPT-OSS-derived MoE proves the future architecture.  
+Vision-language is added only after stable text training.  
+Omni-bridge is added only after stable vision-language behaviour.  
+Native omni-modal training is a later objective, not the first proof-of-concept target.
+
+
+
 ## Proof of Concept Development Principles
 
 ```text
