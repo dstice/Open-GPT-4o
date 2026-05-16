@@ -159,80 +159,131 @@ Reading Materials:
 
 ## Reference Model Comparison and Public Technical Baseline
 
-## Reference Model Comparison and Public Technical Baseline
-
 This section compares publicly available technical information for GPT-2, GPT-4, GPT-4o, GPT-OSS-20B, and GPT-OSS-120B. The purpose is not to claim that Open-GPT-4o reproduces any proprietary OpenAI model, but to establish a transparent public baseline for architectural planning, scaling assumptions, tokenizer choices, context-length targets, multimodal design, and open-weight development strategy.
 
-Where OpenAI has not officially disclosed model details, the table marks those fields as "not officially disclosed" rather than relying on unsupported parameter-count or architecture rumours.
-
-# Model Technical Specification Comparison
+For GPT-4 and GPT-4o, OpenAI has not officially disclosed full internal architecture, parameter count, layer count, hidden size, attention-head configuration, or expert-routing details. Therefore, this table separates official information from unofficial industry estimates.
 
 ## Core Technical Specification
 
 | Technical Specification | GPT-2 | GPT-4 | GPT-4o | GPT-OSS-20B (OpenAI) | GPT-OSS-120B (OpenAI) |
 |---|---|---|---|---|---|
-| Model Type | Text-only autoregressive transformer | Transformer-style model; current API listing is text-only | Autoregressive omni model; text, vision, and audio capability depending on API surface | Text-only autoregressive MoE transformer | Text-only autoregressive MoE transformer |
-| Core Architecture | Dense decoder-only Transformer | Not officially disclosed beyond Transformer-style architecture | Not officially disclosed beyond autoregressive omni/end-to-end multimodal design | Mixture of Experts (MoE) Transformer | Mixture of Experts (MoE) Transformer |
-| Total Parameters | 124M to 1.5B | Not officially disclosed | Not officially disclosed | 20.91B | 116.83B |
-| Active Parameters | Dense model; all parameters active | Not officially disclosed | Not officially disclosed | 3.61B per forward pass | 5.13B per forward pass |
-| Number of Layers | 12 to 48 | Not officially disclosed | Not officially disclosed | 24 | 36 |
-| Attention Heads / GQA | 12 to 25 attention heads | Not officially disclosed | Not officially disclosed | 64 query heads, 8 KV heads/groups (GQA) | 64 query heads, 8 KV heads/groups (GQA) |
+| Disclosure Status | Open/released weights | Proprietary; internals mostly undisclosed | Proprietary; internals mostly undisclosed | Open-weight; architecture disclosed | Open-weight; architecture disclosed |
+| Model Type | Text-only autoregressive language model | Official: Transformer-style language model; current API listing is text-only | Official: autoregressive omni model; API surface supports text and image input, with broader system-card support for text, vision, audio, and video | Text-only autoregressive MoE transformer | Text-only autoregressive MoE transformer |
+| Core Architecture, Official | Dense decoder-only Transformer | Transformer-style model; model size and full architecture not officially disclosed | Autoregressive omni model trained end-to-end across text, vision, and audio | Mixture-of-Experts (MoE) Transformer | Mixture-of-Experts (MoE) Transformer |
+| Core Architecture, Unofficial Estimate | Not needed; architecture disclosed | Often estimated as sparse MoE, commonly described as 16-expert MoE | Often estimated as smaller/faster MoE or hybrid-MoE omni model, but not confirmed by OpenAI | Officially MoE | Officially MoE |
+| Total Parameters, Official | 124M to 1.5B | Not officially disclosed | Not officially disclosed | 20.91B | 116.83B |
+| Total Parameters, Unofficial Estimate | 124M small; 355M medium; 774M large; 1.5B XL | Approx. 1.76T to 1.8T parameters, usually treated as an unconfirmed industry estimate | Common estimates range from approx. 200B to 400B; 200B is a frequently repeated rumour, but not confirmed by OpenAI | Official: 20.91B | Official: 116.83B |
+| Active Parameters, Official | Dense model; effectively all parameters active | Not officially disclosed | Not officially disclosed | 3.61B active parameters per token / forward pass | 5.13B active parameters per token / forward pass |
+| Active Parameters, Unofficial Estimate | Same as total parameters | Approx. 220B to 280B active parameters per token is sometimes inferred from the 16-expert / 2-active-expert rumour; not confirmed | Not reliably established; some third-party listings imply sparse activation, but OpenAI has not confirmed active parameter count | Official: 3.61B | Official: 5.13B |
+| Number of Layers, Official | 12 to 48 | Not officially disclosed | Not officially disclosed | 24 | 36 |
+| Number of Layers, Unofficial Estimate | 12, 24, 36, 48 depending on size | Approx. 120 layers in common unofficial estimates | Third-party estimates vary; some list 48 to 80 layers, but this is not confirmed | Official: 24 | Official: 36 |
+| Expert Count / Routing | Not applicable; dense model | Unofficial estimate: 16 experts, often with 2 active per token | Unconfirmed; some third-party sources claim 16 experts / 2 active, but this is not official | 32 experts, 4 selected per token | 128 experts, 4 selected per token |
+| Attention Heads / GQA | 12 to 25 attention heads | Not officially disclosed | Not officially disclosed | 64 query heads, 8 key-value heads/groups using GQA | 64 query heads, 8 key-value heads/groups using GQA |
 | Hidden Size | 768 to 1600 | Not officially disclosed | Not officially disclosed | 2880 | 2880 |
-| Vocabulary Size | 50,257 | Not officially disclosed | Not officially disclosed; GPT-OSS extends the o200k tokenizer family used by GPT-4o/o4-mini | 201,088 | 201,088 |
-| Context Length | 1,024 tokens | 8,192 tokens in current GPT-4 API listing; larger GPT-4-family variants have existed separately | 128,000 tokens | 131,072 tokens / approximately 128k | 131,072 tokens / approximately 128k |
-| Training Data | Approximately 40GB of Internet text from around 8 million web pages | Not officially disclosed in detail | Pre-trained on data up to October 2023 from public, proprietary partnership, and other sources | Text-only dataset with trillions of tokens, focused on STEM, coding, and general knowledge | Text-only dataset with trillions of tokens, focused on STEM, coding, and general knowledge |
-| Knowledge Cutoff | No formal cutoff stated; model released in 2019 | December 2023 in current OpenAI API model listing | October 2023 | June 2024 | June 2024 |
-| Licensing / Access | MIT licence for released weights on Hugging Face; OpenAI released 1.5B weights/code in 2019 | Proprietary; API access | Proprietary; API access | Apache 2.0 open-weight release | Apache 2.0 open-weight release |
+| Vocabulary Size | 50,257 | Not officially disclosed; commonly associated with OpenAI 100k-token tokenizer family in deployed GPT-4-era models | Not officially disclosed; GPT-OSS documentation states GPT-OSS extends the o200k tokenizer used by GPT-4o and o4-mini | 201,088 | 201,088 |
+| Context Length | 1,024 tokens | Current GPT-4 API listing: 8,192 tokens; GPT-4-family variants have also used larger context windows historically | 128,000 tokens | 131,072 tokens / approximately 128k | 131,072 tokens / approximately 128k |
+| Max Output Tokens | Not usually specified as API-style output limit | Current GPT-4 API listing: 8,192 output tokens | Current GPT-4o API listing: 16,384 output tokens | Model/runtime dependent | Model/runtime dependent |
+| Training Data, Official | Approx. 40GB WebText dataset from around 8 million web pages | Not disclosed in detail; public, licensed, and other data categories mentioned | Pre-trained on data up to October 2023 from public, proprietary partnership, and other sources | Text-only dataset with trillions of tokens, focused on STEM, coding, and general knowledge | Text-only dataset with trillions of tokens, focused on STEM, coding, and general knowledge |
+| Training Data, Unofficial Estimate | WebText | Approx. 13T tokens is a common unconfirmed estimate | Not reliably established; no confirmed public token count | Official: trillions of tokens, exact count not disclosed | Official: trillions of tokens, exact count not disclosed |
+| Knowledge Cutoff | No formal cutoff stated; model released in 2019 | Current API listing: December 2023 | October 2023 | June 2024 | June 2024 |
+| Licensing / Access | MIT licence for released weights; OpenAI released 1.5B weights/code in 2019 | Proprietary; API access | Proprietary; API access | Apache 2.0 open-weight release | Apache 2.0 open-weight release |
+| Quantisation / Efficiency | No official default quantisation specification | Not officially disclosed | Optimised for faster and cheaper API operation than GPT-4 Turbo at launch | MXFP4 quantisation; runs in approximately 16GB memory | MXFP4 quantisation; fits on a single 80GB GPU such as an H100-class card |
 
 ## Multimodal and Special Features
 
 | Feature | GPT-4 / GPT-4V | GPT-4o | GPT-OSS-20B / GPT-OSS-120B |
 |---|---|---|---|
-| Core Modalities | GPT-4 Technical Report describes image and text input with text output; current GPT-4 API listing is text-only | Text, vision, and audio capability; OpenAI describes GPT-4o as an end-to-end omni model | Text-only; no native vision or audio |
+| Core Modalities | GPT-4 Technical Report describes image and text input with text output; current GPT-4 API listing is text-only | Officially described as accepting text, audio, image, and video input, and generating text, audio, and image output; current API model listing exposes text and image input with text output | Text-only; no native vision or audio |
 | Image Processing | GPT-4V supports image understanding; current GPT-4 API page lists image input as unsupported for the GPT-4 endpoint | Supports image input; image-token cost depends on model and detail mode rather than a single fixed 1024x1024 rule | Not applicable |
 | Audio Processing | Not supported in current GPT-4 API listing | Native audio capability; OpenAI reports response latency as low as 232 ms and average latency around 320 ms | Not applicable |
+| Video Processing | Not supported in current GPT-4 API listing | GPT-4o system card describes video as an accepted input modality, though API availability depends on product surface | Not applicable |
 | Reasoning Control | Not configurable in the cited OpenAI documentation | Not configurable in the cited OpenAI documentation | Configurable reasoning effort: low, medium, and high |
+| Chain-of-Thought Visibility | Not exposed | Not exposed | Designed to expose reasoning traces / full chain-of-thought to developers in the harmony response format |
 | Agentic Capabilities | Tool use depends on API/platform integration, not the base architecture specification | Supports tool/function calling through OpenAI platform integrations | Supports function calling, web browsing, Python execution, Structured Outputs, and agentic workflows |
-| Quantisation and Efficiency | No official GPT-4 quantisation specification disclosed | OpenAI described GPT-4o as faster and cheaper than GPT-4 Turbo at launch | MXFP4 quantisation; GPT-OSS-20B can run within approximately 16GB memory, while GPT-OSS-120B can run on a single 80GB GPU such as an H100-class card |
+| Structured Outputs | Not supported in current GPT-4 API listing | Supported in current GPT-4o API listing | Supported |
+| Function Calling | Not supported in current GPT-4 API listing | Supported through OpenAI platform integrations | Supported through harmony format / developer-defined functions |
+| Deployment Model | Hosted proprietary model | Hosted proprietary model | Local/open-weight deployment possible |
+| Efficiency Notes | Expensive legacy API model | Faster and cheaper than GPT-4 Turbo at launch; designed for real-time multimodal interaction | MXFP4 quantisation; 20B targets local/consumer-class deployment, 120B targets single-H100-class deployment |
 
-## Notes on Verification
+## Verification Notes
 
-- GPT-4 parameter counts such as "1.8 trillion parameters" are not officially confirmed by OpenAI, Hugging Face, or arXiv primary sources.
-- GPT-4o parameter-count estimates such as "200B to 400B" or "1.8T to 10T" should be treated as speculation unless labelled clearly as unofficial inference.
+- GPT-4 parameter counts such as "1.76T" or "1.8T" are not officially confirmed by OpenAI.
+- GPT-4 architecture claims such as "16 experts", "2 active experts", "120 layers", and "13T training tokens" should be treated as unofficial industry estimates.
+- GPT-4o parameter-count estimates such as "200B", "300B", or "400B" are also unofficial. OpenAI has not confirmed GPT-4o's parameter count, layer count, hidden size, attention-head configuration, or expert-routing structure.
 - GPT-OSS-20B and GPT-OSS-120B have much stronger public technical disclosure than GPT-4 and GPT-4o.
-- For GPT-4 and GPT-4o, architecture details such as MoE status, layer count, hidden size, and attention-head configuration remain officially undisclosed.
+- For Open-GPT-4o, GPT-4o should be treated as an omni-modal capability target, not as a fully disclosed architecture template.
+- GPT-OSS is the stronger architectural baseline for open-weight MoE design, long-context operation, reasoning-effort control, tool use, and efficient deployment.
+
+## Design Implications for Open-GPT-4o
+
+The public evidence suggests that the most practical open development path is not to attempt a direct clone of GPT-4o, whose internal architecture and parameter count remain undisclosed, but to build a staged open model family using disclosed and reproducible components.
+
+GPT-OSS-20B and GPT-OSS-120B provide the clearest modern OpenAI reference points for open-weight Mixture-of-Experts design, long-context operation, reasoning-effort control, harmony-style chat formatting, and efficient deployment. GPT-2 remains useful as a historical dense-transformer baseline for small-scale experiments and scaffold validation. GPT-4 and GPT-4o are best treated as capability targets rather than fully specified architecture templates.
+
+For this project, the comparison supports the following direction:
+
+1. begin with a small dense GPT-style proof of concept;
+2. lock tokenizer and special-token decisions before serious pre-training;
+3. scale through GPT-2-class and 8B-class checkpoints;
+4. add vision, audio, tool-use, and generation bridges incrementally;
+5. move toward MoE designs inspired by publicly disclosed GPT-OSS architecture;
+6. treat GPT-4o as the omni-modal capability target, not as a directly reproducible public blueprint.
 
 ## References
 
 1. OpenAI. "Better language models and their implications."  
    https://openai.com/index/better-language-models/
 
-2. OpenAI. "GPT-4 Technical Report." arXiv:2303.08774.  
+2. OpenAI. "GPT-2: 1.5B release."  
+   https://openai.com/index/gpt-2-1-5b-release/
+
+3. OpenAI. "Language Models are Unsupervised Multitask Learners."  
+   https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+
+4. OpenAI. "GPT-4 Technical Report." arXiv:2303.08774.  
    https://arxiv.org/abs/2303.08774
-
-3. OpenAI. "GPT-4o System Card."  
-   https://openai.com/index/gpt-4o-system-card/
-
-4. OpenAI. "GPT-4o API model documentation."  
-   https://developers.openai.com/api/docs/models/gpt-4o
 
 5. OpenAI. "GPT-4 API model documentation."  
    https://developers.openai.com/api/docs/models/gpt-4
 
-6. OpenAI. "Images and Vision guide."  
-   https://developers.openai.com/api/docs/guides/images-vision
+6. OpenAI. "GPT-4o System Card."  
+   https://openai.com/index/gpt-4o-system-card/
 
-7. OpenAI. "GPT-OSS Model Card."  
+7. OpenAI. "GPT-4o System Card." arXiv:2410.21276.  
+   https://arxiv.org/abs/2410.21276
+
+8. OpenAI. "GPT-4o API model documentation."  
+   https://developers.openai.com/api/docs/models/gpt-4o
+
+9. OpenAI. "GPT-OSS Model Card."  
    https://openai.com/index/gpt-oss-model-card/
 
-8. OpenAI. "GPT-OSS Model Card PDF."  
-   https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf
+10. OpenAI. "gpt-oss-120b & gpt-oss-20b Model Card." arXiv:2508.10925.  
+    https://arxiv.org/abs/2508.10925
 
-9. OpenAI. "GPT-OSS-20B on Hugging Face."  
-   https://huggingface.co/openai/gpt-oss-20b
+11. OpenAI. "GPT-OSS Model Card PDF."  
+    https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf
 
-10. OpenAI. "GPT-OSS-120B on Hugging Face."  
+12. OpenAI. "GPT-OSS-20B on Hugging Face."  
+    https://huggingface.co/openai/gpt-oss-20b
+
+13. OpenAI. "GPT-OSS-120B on Hugging Face."  
     https://huggingface.co/openai/gpt-oss-120b
+
+14. Hugging Face. "GPT-OSS-120B config.json."  
+    https://huggingface.co/openai/gpt-oss-120b/blob/main/config.json
+
+15. SemiAnalysis. "GPT-4 Architecture, Infrastructure, Training Dataset, Costs, Vision, MoE."  
+    https://semianalysis.com/2023/07/10/gpt-4-architecture-infrastructure/
+
+16. InferenceBench. "GPT-4o Specs, Pricing & GPU Requirements."  
+    https://inferencebench.io/models/proprietary/gpt-4o/
+
+17. Benchable. "OpenAI GPT-4o Model Details & Benchmarks."  
+    https://benchable.ai/models/openai/gpt-4o
+
+18. Exploding Topics. "Number of Parameters in GPT-4."  
+    https://explodingtopics.com/blog/gpt-parameters
 
 ### Design Implications for Open-GPT-4o
 
