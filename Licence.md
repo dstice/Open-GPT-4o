@@ -122,7 +122,7 @@ Creative Commons is not a party to its public licenses. Notwithstanding, Creativ
 Creative Commons may be contacted at creativecommons.org.
 
 
-##Server Side Public License## 
+## Server Side Public License ## 
 **VERSION 1, OCTOBER 16, 2018**
 
 ## See Also
