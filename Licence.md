@@ -132,7 +132,8 @@ Creative Commons may be contacted at creativecommons.org.
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
-**TERMS AND CONDITIONS**
+## TERMS AND CONDITIONS
+
 0. Definitions.
 “This License” refers to Server Side Public License.
 
