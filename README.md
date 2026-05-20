@@ -517,7 +517,7 @@ Keep Open-GPT-4o’s original personality and natural-conversation goals, while 
 
 ## Licence
 
-This is a community project meant for creation and for the community members and the general public as a whole. This project is hence licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International**. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must remain publicly shared under this same licence. All resulting AI products and technologies resulting from this project via research must be made publically available under this same license.
+This is a community project meant for creation and for the community members and the general public as a whole. The project concept is hence licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International** and any and all resulting code under **Server Side Public License (SSPL)**. This project is open for non-commercial, personal and research use. All derivatives of this project, its forks, and clones must remain publicly shared under this same licence. All resulting AI products and technologies resulting from this project via research must be made publically available under this same license.
 
 All other linked repos are governed under their own respective licenses.
 
